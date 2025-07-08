@@ -1,0 +1,13 @@
+// devcontainer.json
+{
+  "name": "Dev Pivot UI Web Components",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "features": {
+    // Installs the exact runtime into /usr/local
+    "ghcr.io/devcontainers/features/node": {
+      "version": "22"
+    }
+  },
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && npm install --global yarn@stable"
+
+}
