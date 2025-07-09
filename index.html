@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PivotUI - Development</title>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f7f9f4;
+      color: #2e312f;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .header h1 {
+      color: #006b4b;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .header p {
+      font-size: 1.125rem;
+      color: #5c5f5c;
+      margin-bottom: 2rem;
+    }
+    
+    .section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .section h2 {
+      margin-top: 0;
+      color: #006b4b;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    
+    .demo-item {
+      padding: 1rem;
+      background: #f0fdfa;
+      border-radius: 8px;
+      border: 1px solid #ccfbf1;
+    }
+    
+    .demo-item h3 {
+      margin-top: 0;
+      font-size: 1rem;
+      color: #00513a;
+    }
+    
+    .code-block {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    
+    .status {
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      display: inline-block;
+      margin: 0.5rem 0.5rem 0.5rem 0;
+    }
+    
+    .status--success {
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+    
+    .status--info {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+    
+    .status--warning {
+      background: #fffbeb;
+      color: #d97706;
+      border: 1px solid #fef3c7;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .nav-links a {
+      color: #006b4b;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      background: #f0fdfa;
+      border: 1px solid #ccfbf1;
+      transition: all 0.2s;
+    }
+    
+    .nav-links a:hover {
+      background: #ccfbf1;
+      color: #00513a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 PivotUI Development</h1>
+      <p>A comprehensive Web Components library for ERP and business applications</p>
+      <div class="status status--success">✅ Material Design 3 Ready</div>
+      <div class="status status--info">📦 Version 0.1.0</div>
+      <div class="status status--warning">🔧 Development Mode</div>
+    </div>
+
+    <div class="nav-links">
+      <a href="/demo.html">🎨 Component Demo</a>
+      <a href="/docs/" target="_blank">📚 Documentation</a>
+      <a href="/examples/" target="_blank">🧩 Examples</a>
+      <a href="https://github.com/marcosmontiel/pivotui" target="_blank">🔗 GitHub</a>
+    </div>
+
+    <div class="section">
+      <h2>🎯 Quick Start</h2>
+      <p>Welcome to PivotUI development environment. Here's what you can do:</p>
+      <div class="demo-grid">
+        <div class="demo-item">
+          <h3>🎨 View Components</h3>
+          <p>See all available components in action</p>
+          <pivot-button variant="filled" onclick="window.location.href='/demo.html'">
+            Open Demo
+          </pivot-button>
+        </div>
+        <div class="demo-item">
+          <h3>🔧 Development</h3>
+          <p>Start building your own components</p>
+          <div class="code-block">yarn dev</div>
+        </div>
+        <div class="demo-item">
+          <h3>🏗️ Build Library</h3>
+          <p>Create production-ready build</p>
+          <div class="code-block">yarn build</div>
+        </div>
+        <div class="demo-item">
+          <h3>📖 Documentation</h3>
+          <p>Learn how to use the components</p>
+          <div class="code-block">
+            BEGINNER-GUIDE.md
+            DEVELOPMENT.md
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>📋 Available Components</h2>
+      <div class="button-group">
+        <pivot-button variant="filled">PivotButton</pivot-button>
+        <pivot-button variant="outlined" disabled>More coming soon...</pivot-button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🧪 Interactive Test</h2>
+      <p>Test the components below:</p>
+      <div class="button-group">
+        <pivot-button id="test-btn-1" variant="filled">Test Button</pivot-button>
+        <pivot-button id="test-btn-2" variant="outlined">Click Counter</pivot-button>
+        <pivot-button id="test-btn-3" variant="tonal">Toggle State</pivot-button>
+      </div>
+      <div id="test-output" style="margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-radius: 8px; min-height: 50px;">
+        <em>Click any button above to test...</em>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🔗 Quick Links</h2>
+      <div class="demo-grid">
+        <div class="demo-item">
+          <h3>📁 Project Structure</h3>
+          <div class="code-block">
+src/
+├── components/
+├── tokens/
+├── styles/
+└── utils/
+          </div>
+        </div>
+        <div class="demo-item">
+          <h3>🎨 Design System</h3>
+          <p>Material Design 3 with green-teal theme</p>
+          <p>Inter (UI) + JetBrains Mono (code)</p>
+        </div>
+        <div class="demo-item">
+          <h3>⚡ Technologies</h3>
+          <ul style="margin: 0; padding-left: 1rem;">
+            <li>Web Components</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS 4.0</li>
+            <li>Vite</li>
+          </ul>
+        </div>
+        <div class="demo-item">
+          <h3>📦 Build Output</h3>
+          <div class="code-block">
+dist/
+├── index.es.js
+├── index.umd.js
+├── pivotui.css
+└── fonts/
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/index.ts"></script>
+  <script>
+    // Test interactions
+    let clickCount = 0;
+    let toggled = false;
+    const output = document.getElementById('test-output');
+    
+    document.getElementById('test-btn-1').addEventListener('click', () => {
+      output.innerHTML = `<strong>✅ Working!</strong> Button clicked at ${new Date().toLocaleTimeString()}`;
+    });
+    
+    document.getElementById('test-btn-2').addEventListener('click', () => {
+      clickCount++;
+      output.innerHTML = `<strong>🔢 Click count:</strong> ${clickCount}`;
+    });
+    
+    document.getElementById('test-btn-3').addEventListener('click', (e) => {
+      toggled = !toggled;
+      const button = e.target;
+      if (toggled) {
+        button.setAttribute('variant', 'filled');
+        button.textContent = 'Active State';
+        output.innerHTML = '<strong>🟢 State: ON</strong>';
+      } else {
+        button.setAttribute('variant', 'tonal');
+        button.textContent = 'Toggle State';
+        output.innerHTML = '<strong>⚪ State: OFF</strong>';
+      }
+    });
+  </script>
+</body>
+</html>
