@@ -1,5 +1,71 @@
-# Vue 3 + TypeScript + Vite
+# PivotUI
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A Vue 3 component library with Tailwind CSS.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Installation
+
+```bash
+npm install pivotui
+# or
+yarn add pivotui
+```
+
+## Usage
+
+```vue
+<script setup>
+import { Button } from 'pivotui'
+import 'pivotui/dist/style.css'
+</script>
+
+<template>
+  <Button>Click me!</Button>
+</template>
+```
+
+## Development
+
+```bash
+# Install dependencies
+yarn install
+
+# Start development server (demo site)
+yarn dev
+
+# Build library
+yarn build:lib
+
+# Build documentation site
+yarn build:docs
+```
+
+## Project Structure
+
+```
+pivotui/
+├── lib/                    # Component library source
+│   ├── components/         # Vue components
+│   ├── composables/        # Vue composables
+│   ├── types/             # TypeScript types
+│   ├── utils/             # Utility functions
+│   └── index.ts           # Main export
+├── src/                   # Demo site source
+│   ├── components/        # Demo components
+│   ├── pages/             # Demo pages
+│   ├── App.vue           # Demo app
+│   └── main.ts           # Demo entry
+├── dist/                 # Built library
+└── docs/                 # Built demo site
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+MIT

@@ -1,0 +1,23 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": false,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["lib/*"]
+    }
+  },
+  "include": [
+    "lib/**/*",
+    "lib/**/*.vue"
+  ],
+  "exclude": [
+    "src/**/*",
+    "node_modules",
+    "dist"
+  ]
+}

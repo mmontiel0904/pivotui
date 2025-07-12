@@ -1,0 +1,16 @@
+src/
+lib/
+docs/
+node_modules/
+.git/
+.github/
+*.log
+*.md
+!README.md
+tsconfig*.json
+vite.config*.ts
+.env*
+.vscode/
+.idea/
+coverage/
+tests/
