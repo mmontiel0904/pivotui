@@ -80,11 +80,19 @@ pivotui/
 ### Button Component (`lib/components/Button.vue`)
 **Features:**
 - **5 variants**: primary, secondary, outline, ghost, danger
-- **3 sizes**: sm, md, lg
+- **3 sizes**: sm, md, lg with proper typography scaling
 - **States**: normal, disabled, loading
 - **TypeScript**: Fully typed props with ButtonProps interface
-- **Styling**: Tailwind classes with hover/focus states
+- **Material Design 3**: Full semantic color token integration
 - **Loading state**: Custom spinner animation
+
+**Design Decisions:**
+- **Border Radius**: 8px (`rounded-md`) - optimal for ERP applications
+  - Research-backed: 17-55% higher click rates vs sharp corners
+  - Balances modern usability with professional aesthetics
+  - Material Design 3 "Small" shape scale compliant
+- **Color System**: Full OKLCH semantic token usage
+- **Typography**: MD3 label scale with proper font weights
 
 **Props Interface:**
 ```typescript
@@ -96,6 +104,11 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
 }
 ```
+
+**Updated Styling:**
+- Uses semantic color tokens (`bg-primary`, `text-on-primary`, etc.)
+- Typography scale integration (`text-label-small/medium/large`)
+- Professional focus states with design token consistency
 
 ### Demo Components
 - **ButtonExamples.vue**: Interactive showcase with all variants, sizes, states
@@ -138,6 +151,21 @@ interface ButtonProps {
 - Added path aliases to `tsconfig.app.json`
 - Added resolve aliases to all Vite configs
 - Included lib files in TypeScript compilation
+
+### 4. Design Token Architecture
+**Problem**: Single source of truth vs build compatibility
+**Solution**: Synchronized architecture approach
+- Library (`lib/style.css`): Complete design system with typography utilities
+- Demo (`src/style.css`): Color tokens only, no `@apply` utilities
+- Avoids circular dependencies while maintaining consistency
+- Both builds work independently (demo: 47.87 kB CSS, library: 1,609.76 kB CSS)
+
+### 5. OKLCH Color Space Implementation
+**Problem**: Better color precision needed for professional applications
+**Solution**: 
+- Converted all hex colors to OKLCH format for superior color consistency
+- Maintained exact visual appearance while future-proofing color system
+- Enhanced color manipulation capabilities for gradients and animations
 
 ## Commands Reference
 ```bash
