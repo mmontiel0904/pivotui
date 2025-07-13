@@ -41,13 +41,20 @@ pivotui/
 - **vite.config.docs.ts**: GitHub Pages build with base path
 - **Fixed path imports**: Used `path.resolve(process.cwd(), ...)` for cross-platform compatibility
 
-### 4. Tailwind CSS Setup
+### 4. Typography & Font Management
+- **Self-hosted fonts**: @fontsource packages for Inter, Source Serif Pro, JetBrains Mono
+- **No CDN dependencies**: All fonts bundled in library for offline use and privacy
+- **License compliance**: All fonts use SIL Open Font License 1.1
+- **Font loading**: CSS imports in lib/style.css, exported via lib/index.ts
+
+### 5. Tailwind CSS Setup
 - **Version**: Tailwind CSS v4.1 with `@tailwindcss/vite` plugin
 - **Import syntax**: `@import "tailwindcss";` (v4.1 syntax, not the old @tailwind directives)
-- **Configuration**: `tailwind.config.js` scans both lib/ and src/ directories
+- **Configuration**: `tailwind.config.js` with MD3 typography scale and font families
+- **Custom utilities**: Typography classes for consistent text styling
 - **Applied to**: Demo site and component styles
 
-### 5. Package.json Configuration
+### 6. Package.json Configuration
 ```json
 {
   "name": "pivotui",
@@ -159,12 +166,30 @@ yarn build:docs         # Build demo site for GitHub Pages
 - **Neutral tones**: Emphasis on readability and reduced eye strain
 - **Surface variants**: Cards, tables, and elevated components
 
-### Typography Scale
-- **Display**: Page headers and dashboard titles
-- **Headline**: Section headers and card titles
-- **Body**: Form labels, table content, general text
-- **Label**: Button text, chips, and small UI elements
-- **Monospace**: Currency, numbers, and data values
+### Typography Implementation
+**Font Stack (Self-hosted via @fontsource):**
+- **Primary (Inter)**: UI elements, buttons, forms, body text
+- **Secondary (Source Serif Pro)**: Headers, emphasis, display text
+- **Monospace (JetBrains Mono)**: Data display, currency, tabular numbers
+
+**Material Design 3 Typography Scale:**
+- **Display** (57px/45px/36px): Page headers, dashboard titles - `font-serif`
+- **Headline** (32px/28px/24px): Section headers, card titles - `font-serif`
+- **Title** (22px/16px/14px): Subheadings, important labels - `font-sans`
+- **Body** (16px/14px/12px): Form labels, table content, general text - `font-sans`
+- **Label** (14px/12px/11px): Button text, chips, small UI elements - `font-sans`
+- **Data/Numeric**: Financial data with tabular numbers - `font-mono`
+
+**CSS Utility Classes:**
+```css
+.text-display-large     /* 57px serif regular */
+.text-headline-medium   /* 28px serif semibold */
+.text-title-large       /* 22px sans medium */
+.text-body-medium       /* 14px sans regular */
+.text-label-large       /* 14px sans medium */
+.text-data             /* monospace regular */
+.text-numeric          /* tabular-nums monospace */
+```
 
 ### Component Priorities
 1. **Data Tables**: Sortable, filterable, paginated tables with density controls

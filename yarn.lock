@@ -260,6 +260,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/inter@npm:^5.2.6":
+  version: 5.2.6
+  resolution: "@fontsource/inter@npm:5.2.6"
+  checksum: 10c0/7a1347608aab06e53665272ed41fd906ffa96c57b004e8aae91b98177bba97c54b60305d956254c4771387c383f9bdbd917006fb34c9721c020e6017d33e9a5c
+  languageName: node
+  linkType: hard
+
+"@fontsource/jetbrains-mono@npm:^5.2.6":
+  version: 5.2.6
+  resolution: "@fontsource/jetbrains-mono@npm:5.2.6"
+  checksum: 10c0/51c8ce5ee3af0db9c4e5cfda6eb5f0e49b19c7aa481eb5063ac03699913ef54d6e008511d7fb9ed26d867d76657576d08f3f6959a13570934bb49d25b8ac8d9f
+  languageName: node
+  linkType: hard
+
+"@fontsource/source-serif-pro@npm:^5.2.5":
+  version: 5.2.5
+  resolution: "@fontsource/source-serif-pro@npm:5.2.5"
+  checksum: 10c0/40bfd9d0c673c96d8e84be9f6d32a53088f7a1519d612eadb5a9ffd8ec35f0553bc28f74c001beaaa07e7e2402e02545c8f6cbeb995e0f0e74a9efce5577ae1a
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -1748,6 +1769,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pivotui@workspace:."
   dependencies:
+    "@fontsource/inter": "npm:^5.2.6"
+    "@fontsource/jetbrains-mono": "npm:^5.2.6"
+    "@fontsource/source-serif-pro": "npm:^5.2.5"
     "@tailwindcss/vite": "npm:^4.1.11"
     "@types/node": "npm:^24.0.13"
     "@vitejs/plugin-vue": "npm:^6.0.0"

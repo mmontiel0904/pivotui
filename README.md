@@ -29,10 +29,62 @@ import 'pivotui/dist/style.css'
 </script>
 
 <template>
-  <Button variant="primary" size="md">
-    Save Record
-  </Button>
+  <div>
+    <!-- Typography examples -->
+    <h1 class="text-display-medium">Financial Dashboard</h1>
+    <h2 class="text-headline-small">Quarterly Reports</h2>
+    <p class="text-body-large">Account summary and financial metrics</p>
+    
+    <!-- Data display with monospace -->
+    <div class="text-numeric">$1,234,567.89</div>
+    
+    <!-- Component usage -->
+    <Button variant="primary" size="md" class="text-label-large">
+      Save Record
+    </Button>
+  </div>
 </template>
+```
+
+### Typography System
+
+PivotUI includes a complete Material Design 3 typography system optimized for ERP applications:
+
+#### Font Stack (Self-hosted)
+- **Inter**: Primary font for UI elements, forms, and body text
+- **Source Serif Pro**: Secondary font for headers and emphasis
+- **JetBrains Mono**: Monospace font for data display and numerical values
+
+#### Typography Classes
+```css
+/* Display text - Page headers */
+.text-display-large      /* 57px - Dashboard titles */
+.text-display-medium     /* 45px - Major headings */
+.text-display-small      /* 36px - Section headers */
+
+/* Headlines - Card and section titles */
+.text-headline-large     /* 32px - Primary headings */
+.text-headline-medium    /* 28px - Secondary headings */
+.text-headline-small     /* 24px - Subsection titles */
+
+/* Titles - Form labels and important text */
+.text-title-large        /* 22px - Form section headers */
+.text-title-medium       /* 16px - Field labels */
+.text-title-small        /* 14px - Minor labels */
+
+/* Body text - Content and descriptions */
+.text-body-large         /* 16px - Primary content */
+.text-body-medium        /* 14px - Secondary content */
+.text-body-small         /* 12px - Supporting text */
+
+/* Labels - Button text and UI elements */
+.text-label-large        /* 14px - Button text */
+.text-label-medium       /* 12px - Small buttons */
+.text-label-small        /* 11px - Tiny UI elements */
+
+/* Data display - Numerical and tabular data */
+.text-data              /* Monospace for code/data */
+.text-numeric           /* Tabular numbers for financials */
 ```
 
 ### Available Components

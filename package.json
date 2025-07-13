@@ -43,6 +43,9 @@
     "vue": "^3.5.0"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.6",
+    "@fontsource/jetbrains-mono": "^5.2.6",
+    "@fontsource/source-serif-pro": "^5.2.5",
     "@tailwindcss/vite": "^4.1.11",
     "tailwindcss": "^4.1.11"
   },
