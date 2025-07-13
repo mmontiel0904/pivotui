@@ -1,7 +1,7 @@
 <template>
-  <div class="space-y-8">
+  <div class="space-y-8 bg-surface p-6 rounded-lg">
     <section>
-      <h3 class="text-lg font-semibold mb-4">Button Variants</h3>
+      <h3 class="text-title-large text-on-surface mb-4">Button Variants</h3>
       <div class="flex flex-wrap gap-3">
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
@@ -12,7 +12,7 @@
     </section>
 
     <section>
-      <h3 class="text-lg font-semibold mb-4">Button Sizes</h3>
+      <h3 class="text-title-large text-on-surface mb-4">Button Sizes</h3>
       <div class="flex flex-wrap items-center gap-3">
         <Button size="sm">Small</Button>
         <Button size="md">Medium</Button>
@@ -21,7 +21,7 @@
     </section>
 
     <section>
-      <h3 class="text-lg font-semibold mb-4">Button States</h3>
+      <h3 class="text-title-large text-on-surface mb-4">Button States</h3>
       <div class="flex flex-wrap gap-3">
         <Button>Normal</Button>
         <Button disabled>Disabled</Button>
@@ -30,7 +30,7 @@
     </section>
 
     <section>
-      <h3 class="text-lg font-semibold mb-4">Interactive Example</h3>
+      <h3 class="text-title-large text-on-surface mb-4">Interactive Example</h3>
       <div class="space-y-4">
         <div class="flex gap-3">
           <Button @click="handleClick">Click me!</Button>
@@ -38,7 +38,7 @@
             {{ isLoading ? 'Stop Loading' : 'Show Loading' }}
           </Button>
         </div>
-        <div v-if="clickCount > 0" class="text-sm text-gray-600">
+        <div v-if="clickCount > 0" class="text-body-small text-on-surface-variant">
           Button clicked {{ clickCount }} times
         </div>
         <Button :loading="isLoading" variant="primary">
@@ -48,8 +48,8 @@
     </section>
 
     <section>
-      <h3 class="text-lg font-semibold mb-4">Code Example</h3>
-      <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono">
+      <h3 class="text-title-large text-on-surface mb-4">Code Example</h3>
+      <div class="bg-surface-variant border border-outline-variant rounded-lg p-4 text-body-small font-mono text-on-surface-variant">
         <pre><code>&lt;script setup&gt;
 import { Button } from 'pivotui'
 

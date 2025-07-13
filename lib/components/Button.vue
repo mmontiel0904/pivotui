@@ -34,17 +34,17 @@ const buttonClasses = computed(() => {
   ]
 
   const variantClasses = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-600',
-    secondary: 'bg-gray-100 text-gray-900 hover:bg-gray-200 focus-visible:ring-gray-500',
-    outline: 'border border-gray-300 bg-transparent hover:bg-gray-50 focus-visible:ring-gray-500',
-    ghost: 'hover:bg-gray-100 focus-visible:ring-gray-500',
-    danger: 'bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-600'
+    primary: 'bg-primary text-on-primary hover:bg-primary-800 focus-visible:ring-primary-600',
+    secondary: 'bg-secondary-container text-on-secondary-container hover:bg-neutral-200 focus-visible:ring-secondary',
+    outline: 'border border-outline bg-transparent text-on-surface hover:bg-surface-variant focus-visible:ring-primary',
+    ghost: 'text-on-surface hover:bg-surface-variant focus-visible:ring-primary',
+    danger: 'bg-error text-on-error hover:bg-error-container focus-visible:ring-error'
   }
 
   const sizeClasses = {
-    sm: 'h-8 px-3 text-sm',
-    md: 'h-10 px-4',
-    lg: 'h-11 px-6 text-lg'
+    sm: 'h-8 px-3 text-label-small',
+    md: 'h-10 px-4 text-label-medium',
+    lg: 'h-11 px-6 text-label-large'
   }
 
   return [

@@ -10,3 +10,98 @@
 @import '@fontsource/jetbrains-mono/500.css';
 
 @import "tailwindcss";
+
+/* Material Design 3 Color Tokens for ERP - OKLCH Color Space */
+@theme {
+  /* Primary Teal Palette - Professional & Elegant */
+  --color-primary-50: oklch(0.948 0.019 193.0);
+  --color-primary-100: oklch(0.871 0.047 189.7);
+  --color-primary-200: oklch(0.791 0.075 188.3);
+  --color-primary-300: oklch(0.712 0.098 186.7);
+  --color-primary-400: oklch(0.656 0.107 185.4);
+  --color-primary-500: oklch(0.605 0.107 183.4);
+  --color-primary-600: oklch(0.566 0.101 182.5);
+  --color-primary-700: oklch(0.517 0.093 181.1);
+  --color-primary-800: oklch(0.467 0.084 180.4);
+  --color-primary-900: oklch(0.376 0.070 176.4);
+  
+  /* Blue Gray Neutral Palette - Sophisticated Base */
+  --color-neutral-50: oklch(0.950 0.004 237.0);
+  --color-neutral-100: oklch(0.877 0.011 226.2);
+  --color-neutral-200: oklch(0.793 0.018 229.2);
+  --color-neutral-300: oklch(0.706 0.027 229.4);
+  --color-neutral-400: oklch(0.639 0.033 229.6);
+  --color-neutral-500: oklch(0.572 0.040 229.1);
+  --color-neutral-600: oklch(0.522 0.036 227.9);
+  --color-neutral-700: oklch(0.454 0.030 228.7);
+  --color-neutral-800: oklch(0.387 0.025 229.8);
+  --color-neutral-900: oklch(0.309 0.019 229.8);
+  
+  /* Semantic Color Tokens */
+  --color-primary: var(--color-primary-700);
+  --color-primary-container: var(--color-primary-100);
+  --color-on-primary: oklch(1.000 0.000 263.3);
+  --color-on-primary-container: var(--color-primary-900);
+  
+  --color-secondary: var(--color-neutral-600);
+  --color-secondary-container: var(--color-neutral-100);
+  --color-on-secondary: oklch(1.000 0.000 263.3);
+  --color-on-secondary-container: var(--color-neutral-900);
+  
+  /* Surface Colors */
+  --color-surface: var(--color-neutral-50);
+  --color-surface-variant: var(--color-neutral-100);
+  --color-on-surface: var(--color-neutral-900);
+  --color-on-surface-variant: var(--color-neutral-700);
+  
+  /* Outline & Borders */
+  --color-outline: var(--color-neutral-300);
+  --color-outline-variant: var(--color-neutral-200);
+  
+  /* ERP Status Colors - Muted & Professional */
+  --color-success: var(--color-primary-600);
+  --color-success-container: var(--color-primary-50);
+  --color-on-success: oklch(1.000 0.000 263.3);
+  
+  --color-warning: oklch(0.717 0.175 53.5);
+  --color-warning-container: oklch(0.979 0.031 93.0);
+  --color-on-warning: oklch(1.000 0.000 263.3);
+  
+  --color-error: oklch(0.568 0.200 26.4);
+  --color-error-container: oklch(0.957 0.022 7.0);
+  --color-on-error: oklch(1.000 0.000 263.3);
+  
+  --color-info: var(--color-neutral-600);
+  --color-info-container: var(--color-neutral-100);
+  --color-on-info: oklch(1.000 0.000 263.3);
+}
+
+/* Material Design 3 Typography Utilities for ERP */
+.text-display-large { @apply text-display-large font-serif font-regular; }
+.text-display-medium { @apply text-display-medium font-serif font-regular; }
+.text-display-small { @apply text-display-small font-serif font-regular; }
+
+.text-headline-large { @apply text-headline-large font-serif font-semibold; }
+.text-headline-medium { @apply text-headline-medium font-serif font-semibold; }
+.text-headline-small { @apply text-headline-small font-serif font-semibold; }
+
+.text-title-large { @apply text-title-large font-sans font-medium; }
+.text-title-medium { @apply text-title-medium font-sans font-medium; }
+.text-title-small { @apply text-title-small font-sans font-medium; }
+
+.text-body-large { @apply text-body-large font-sans font-regular; }
+.text-body-medium { @apply text-body-medium font-sans font-regular; }
+.text-body-small { @apply text-body-small font-sans font-regular; }
+
+.text-label-large { @apply text-label-large font-sans font-medium; }
+.text-label-medium { @apply text-label-medium font-sans font-medium; }
+.text-label-small { @apply text-label-small font-sans font-medium; }
+
+/* Monospace utilities for data display */
+.text-data { @apply font-mono font-regular; }
+.text-data-large { @apply text-body-large font-mono font-regular; }
+.text-data-medium { @apply text-body-medium font-mono font-regular; }
+.text-data-small { @apply text-body-small font-mono font-regular; }
+
+/* Tabular numbers for financial data */
+.text-numeric { @apply font-mono font-regular; font-variant-numeric: tabular-nums; }

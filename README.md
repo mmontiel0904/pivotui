@@ -14,6 +14,7 @@ yarn add pivotui
 
 - 🎨 **Material Design 3** components optimized for enterprise applications
 - 📊 **ERP-focused** design patterns for data-heavy interfaces  
+- 🎨 **OKLCH Color Space** for superior color precision and consistency
 - 🔧 **TypeScript** first with full type safety
 - ⚡ **Performance** optimized for large datasets
 - 🎯 **Accessibility** compliant with ARIA standards

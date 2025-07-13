@@ -160,11 +160,12 @@ yarn build:docs         # Build demo site for GitHub Pages
 - **Accessibility**: ARIA support and keyboard navigation
 - **Performance**: Optimized for large datasets and complex forms
 
-### Color System (ERP-Focused)
-- **Primary palette**: Professional blues and grays
-- **Semantic colors**: Success (green), warning (amber), error (red)
-- **Neutral tones**: Emphasis on readability and reduced eye strain
-- **Surface variants**: Cards, tables, and elevated components
+### Color System (ERP-Focused) - OKLCH Implementation
+- **Primary palette**: Dark teal (oklch) - professional & elegant depth
+- **Neutral palette**: Blue-gray (oklch) - sophisticated base tones
+- **Semantic colors**: Muted success (teal), professional warning (amber), corporate error (red)
+- **OKLCH benefits**: Better color precision, uniform lightness, future-proof color space
+- **Surface variants**: Light neutral backgrounds for cards, tables, and elevated components
 
 ### Typography Implementation
 **Font Stack (Self-hosted via @fontsource):**
