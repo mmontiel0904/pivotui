@@ -1,7 +1,7 @@
 # PivotUI - Claude Memory File
 
 ## Project Overview
-**PivotUI** is a Vue 3 component library with Tailwind CSS, transformed from a basic Vite template into a production-ready component library for NPM distribution and public use.
+**PivotUI** is a Vue 3 component library implementing Material Design 3 principles optimized for ERP and accounting systems. Built with Tailwind CSS and TypeScript, it provides production-ready components focused on data density, consistency, and enterprise workflows.
 
 ## Project Structure
 ```
@@ -145,13 +145,50 @@ yarn build:docs         # Build demo site for GitHub Pages
 # 2. Push to main branch to deploy demo site
 ```
 
+## Material Design 3 ERP Strategy
+
+### Design Principles Adopted
+- **Data density**: Compact layouts for information-heavy interfaces
+- **Consistency**: Unified spacing, typography, and interaction patterns
+- **Accessibility**: ARIA support and keyboard navigation
+- **Performance**: Optimized for large datasets and complex forms
+
+### Color System (ERP-Focused)
+- **Primary palette**: Professional blues and grays
+- **Semantic colors**: Success (green), warning (amber), error (red)
+- **Neutral tones**: Emphasis on readability and reduced eye strain
+- **Surface variants**: Cards, tables, and elevated components
+
+### Typography Scale
+- **Display**: Page headers and dashboard titles
+- **Headline**: Section headers and card titles
+- **Body**: Form labels, table content, general text
+- **Label**: Button text, chips, and small UI elements
+- **Monospace**: Currency, numbers, and data values
+
+### Component Priorities
+1. **Data Tables**: Sortable, filterable, paginated tables with density controls
+2. **Form Controls**: Text fields, selects, date pickers with validation
+3. **Navigation**: Module navigation rail and tabbed interfaces
+4. **Status Indicators**: Chips, badges, and progress indicators
+5. **Layout**: Cards, grids, and responsive containers
+
+### ERP-Specific Adaptations
+- **Density modes**: Comfortable/compact toggle for data views
+- **Financial formatting**: Currency symbols, number alignment
+- **Audit trails**: Timestamps and user attribution
+- **Bulk actions**: Multi-select and batch operations
+- **Real-time updates**: Live data refresh indicators
+
 ## Next Steps for Development
-1. **Create additional components** (Input, Card, Modal, etc.)
-2. **Add component documentation** with props tables
-3. **Set up Storybook** for better component development
-4. **Add unit tests** with Vitest
-5. **Configure automated releases** with semantic versioning
-6. **Add accessibility features** and ARIA support
+1. **Implement MD3 design tokens** with Tailwind custom theme
+2. **Update Button component** to MD3 specifications
+3. **Create data table component** with ERP features
+4. **Add form control components** (Input, Select, DatePicker)
+5. **Develop navigation components** (Rail, Tabs, Breadcrumbs)
+6. **Set up Storybook** for component documentation
+7. **Add unit tests** with Vitest
+8. **Configure automated releases** with semantic versioning
 
 ## Important Notes
 - **Public repository**: All workflows are secure for public use
