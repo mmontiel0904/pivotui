@@ -87,6 +87,33 @@ yarn build:lib        # Build library for NPM
 yarn build:docs       # Build demo site
 ```
 
+### Adding New Components
+
+Follow these steps to add components to the library and demo:
+
+**1. Create Component:**
+```bash
+# Create in library
+touch lib/components/NewComponent.vue
+# Export in lib/components/index.ts
+```
+
+**2. Add to Demo:**
+```bash
+# Create demo section
+touch src/components/sections/NewComponentSection.vue
+# Update DemoNavigation.vue with nav item
+# Add route in App.vue
+```
+
+**3. Follow Design System:**
+- Use semantic color tokens (`bg-surface`, `text-on-surface`)
+- Apply MD3 typography scale (`text-display-*`, `text-headline-*`)
+- Maintain 8px border radius (`rounded-lg`)
+- Include interactive examples and code snippets
+
+See CLAUDE.md for detailed implementation guide.
+
 ## License
 
 MIT

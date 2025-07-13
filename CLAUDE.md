@@ -234,15 +234,142 @@ yarn build:docs         # Build demo site for GitHub Pages
 - **Bulk actions**: Multi-select and batch operations
 - **Real-time updates**: Live data refresh indicators
 
+## Demo App Architecture
+
+### Side Navigation Structure
+The demo app uses a professional side navigation layout with organized sections:
+
+```
+src/
+├── components/
+│   ├── DemoNavigation.vue          # Main sidebar navigation
+│   ├── sections/                   # Content sections
+│   │   ├── OverviewSection.vue     # Landing page with features
+│   │   ├── InstallationSection.vue # Setup instructions
+│   │   └── [ComponentName]Section.vue # Individual component docs
+│   └── ButtonExamples.vue          # Component showcase example
+└── App.vue                         # Main layout with navigation state
+```
+
+### Adding New Components to Demo
+
+#### 1. Create Component in Library
+```bash
+# Create the component
+touch lib/components/NewComponent.vue
+# Add to exports
+# Update lib/components/index.ts
+```
+
+#### 2. Create Demo Section
+```bash
+# Create section component
+touch src/components/sections/NewComponentSection.vue
+```
+
+**Section Template:**
+```vue
+<template>
+  <div class="space-y-8">
+    <div>
+      <h1 class="text-display-small text-on-surface mb-4">Component Name</h1>
+      <p class="text-body-large text-on-surface-variant max-w-2xl">
+        Component description and purpose for ERP applications.
+      </p>
+    </div>
+    
+    <div class="bg-surface rounded-lg p-6 border border-outline-variant">
+      <ComponentExamples />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import ComponentExamples from '../ComponentExamples.vue'
+</script>
+```
+
+#### 3. Update Navigation
+**Add to `DemoNavigation.vue`:**
+```vue
+<li>
+  <button
+    @click="$emit('navigate', 'new-component')"
+    :class="[
+      'w-full text-left px-3 py-2 rounded-md text-label-large transition-colors',
+      activeSection === 'new-component' 
+        ? 'bg-primary-container text-on-primary-container' 
+        : 'text-on-surface hover:bg-surface-variant'
+    ]"
+  >
+    New Component
+  </button>
+</li>
+```
+
+#### 4. Update App.vue Router
+**Add section to `App.vue`:**
+```vue
+<script setup>
+// Import new section
+import NewComponentSection from './components/sections/NewComponentSection.vue'
+
+// Add to section titles
+const sectionTitles: Record<string, string> = {
+  // ... existing
+  'new-component': 'New Component'
+}
+</script>
+
+<template>
+  <!-- Add to main content -->
+  <NewComponentSection v-if="activeSection === 'new-component'" />
+</template>
+```
+
+### Component Examples Pattern
+Create showcase components following `ButtonExamples.vue` pattern:
+
+```vue
+<template>
+  <div class="space-y-8">
+    <section>
+      <h3 class="text-title-large text-on-surface mb-4">Variants</h3>
+      <div class="flex flex-wrap gap-3">
+        <!-- Component variants -->
+      </div>
+    </section>
+    
+    <section>
+      <h3 class="text-title-large text-on-surface mb-4">Interactive Example</h3>
+      <!-- Live examples with state -->
+    </section>
+    
+    <section>
+      <h3 class="text-title-large text-on-surface mb-4">Code Example</h3>
+      <div class="bg-surface-variant border border-outline-variant rounded-lg p-4 text-body-small font-mono text-on-surface-variant">
+        <pre><code><!-- Usage example --></code></pre>
+      </div>
+    </section>
+  </div>
+</template>
+```
+
+### Design System Compliance
+- **Use semantic color tokens**: `bg-surface`, `text-on-surface`, etc.
+- **Follow typography scale**: `text-display-*`, `text-headline-*`, etc.
+- **Maintain spacing consistency**: `space-y-8`, `mb-4`, `p-6`
+- **Apply proper borders**: `border border-outline-variant`
+- **Use rounded corners**: `rounded-lg` (8px) for consistency
+
 ## Next Steps for Development
-1. **Implement MD3 design tokens** with Tailwind custom theme
-2. **Update Button component** to MD3 specifications
-3. **Create data table component** with ERP features
-4. **Add form control components** (Input, Select, DatePicker)
-5. **Develop navigation components** (Rail, Tabs, Breadcrumbs)
-6. **Set up Storybook** for component documentation
-7. **Add unit tests** with Vitest
-8. **Configure automated releases** with semantic versioning
+1. **Create data table component** with ERP features
+2. **Add form control components** (Input, Select, DatePicker)
+3. **Develop navigation components** (Rail, Tabs, Breadcrumbs)
+4. **Create typography showcase section** with all font scales
+5. **Build colors documentation section** with palette display
+6. **Set up component testing** with Vitest
+7. **Configure automated releases** with semantic versioning
 
 ## Important Notes
 - **Public repository**: All workflows are secure for public use

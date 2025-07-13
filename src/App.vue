@@ -1,63 +1,138 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import DemoNavigation from './components/DemoNavigation.vue'
+import OverviewSection from './components/sections/OverviewSection.vue'
+import InstallationSection from './components/sections/InstallationSection.vue'
 import ButtonExamples from './components/ButtonExamples.vue'
-import { Button } from '@lib/components'
+
+// Navigation state
+const activeSection = ref('overview')
+
+const navigateToSection = (section: string) => {
+  activeSection.value = section
+}
+
+// Section titles for header
+const sectionTitles: Record<string, string> = {
+  overview: 'Overview',
+  installation: 'Installation',
+  'design-tokens': 'Design Tokens',
+  button: 'Button',
+  typography: 'Typography',
+  colors: 'Colors'
+}
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50">
-    <header class="bg-white shadow-sm border-b">
-      <div class="max-w-7xl mx-auto px-4 py-6">
+  <div class="min-h-screen bg-surface flex">
+    <!-- Side Navigation -->
+    <DemoNavigation 
+      :active-section="activeSection" 
+      @navigate="navigateToSection" 
+    />
+    
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0">
+      <!-- Header -->
+      <header class="bg-surface border-b border-outline-variant px-8 py-6 sticky top-0 z-10">
         <div class="flex items-center justify-between">
           <div>
-            <h1 class="text-3xl font-bold text-gray-900">PivotUI Components</h1>
-            <p class="text-gray-600 mt-2">A Vue 3 component library with Tailwind CSS</p>
+            <h1 class="text-headline-large text-on-surface">
+              {{ sectionTitles[activeSection] }}
+            </h1>
+            <p class="text-body-medium text-on-surface-variant mt-1">
+              PivotUI Component Library Documentation
+            </p>
           </div>
           <div class="flex gap-3">
-            <Button variant="outline" size="sm">Documentation</Button>
-            <Button variant="primary" size="sm">Get Started</Button>
+            <a 
+              href="https://github.com" 
+              target="_blank"
+              class="text-label-large text-on-surface-variant hover:text-on-surface transition-colors"
+            >
+              GitHub
+            </a>
+            <a 
+              href="https://npmjs.com" 
+              target="_blank"
+              class="text-label-large text-on-surface-variant hover:text-on-surface transition-colors"
+            >
+              NPM
+            </a>
           </div>
         </div>
-      </div>
-    </header>
-    
-    <main class="max-w-7xl mx-auto px-4 py-8">
-      <div class="grid gap-12">
-        <section>
-          <h2 class="text-2xl font-semibold mb-4">Getting Started</h2>
-          <div class="bg-white rounded-lg shadow p-6">
-            <p class="text-gray-600 mb-4">
-              Welcome to PivotUI! This is the demo site for the component library.
-              Install the library and start using beautiful, accessible components.
-            </p>
-            <div class="bg-gray-100 rounded p-4 text-sm font-mono">
-              <code>npm install pivotui</code>
+      </header>
+      
+      <!-- Content Area -->
+      <main class="flex-1 p-8 overflow-y-auto">
+        <div class="max-w-5xl">
+          <!-- Overview Section -->
+          <OverviewSection v-if="activeSection === 'overview'" />
+          
+          <!-- Installation Section -->
+          <InstallationSection v-if="activeSection === 'installation'" />
+          
+          <!-- Design Tokens Section -->
+          <div v-if="activeSection === 'design-tokens'" class="space-y-8">
+            <div>
+              <h1 class="text-display-small text-on-surface mb-4">Design Tokens</h1>
+              <p class="text-body-large text-on-surface-variant max-w-2xl">
+                PivotUI uses Material Design 3 design tokens implemented with OKLCH color space 
+                for superior color precision and professional aesthetics.
+              </p>
+            </div>
+            <div class="bg-surface rounded-lg p-6 border border-outline-variant">
+              <p class="text-body-medium text-on-surface-variant">
+                Detailed design token documentation coming soon...
+              </p>
             </div>
           </div>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-semibold mb-6">Button Component</h2>
-          <div class="bg-white rounded-lg shadow p-6">
-            <ButtonExamples />
+          
+          <!-- Button Section -->
+          <div v-if="activeSection === 'button'" class="space-y-8">
+            <div>
+              <h1 class="text-display-small text-on-surface mb-4">Button</h1>
+              <p class="text-body-large text-on-surface-variant max-w-2xl">
+                A versatile button component with multiple variants, sizes, and states. 
+                Optimized for enterprise applications with Material Design 3 principles.
+              </p>
+            </div>
+            <div class="bg-surface rounded-lg p-6 border border-outline-variant">
+              <ButtonExamples />
+            </div>
           </div>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-semibold mb-4">More Components Coming Soon</h2>
-          <div class="bg-white rounded-lg shadow p-6">
-            <p class="text-gray-600 mb-4">
-              This library is actively being developed. More components will be added soon:
-            </p>
-            <ul class="space-y-2 text-gray-600">
-              <li>• Input & Form Components</li>
-              <li>• Cards & Layouts</li>
-              <li>• Navigation Components</li>
-              <li>• Data Display Components</li>
-              <li>• Feedback Components</li>
-            </ul>
+          
+          <!-- Typography Section -->
+          <div v-if="activeSection === 'typography'" class="space-y-8">
+            <div>
+              <h1 class="text-display-small text-on-surface mb-4">Typography</h1>
+              <p class="text-body-large text-on-surface-variant max-w-2xl">
+                Complete Material Design 3 typography system with self-hosted fonts optimized for ERP applications.
+              </p>
+            </div>
+            <div class="bg-surface rounded-lg p-6 border border-outline-variant">
+              <p class="text-body-medium text-on-surface-variant">
+                Typography documentation coming soon...
+              </p>
+            </div>
           </div>
-        </section>
-      </div>
-    </main>
+          
+          <!-- Colors Section -->
+          <div v-if="activeSection === 'colors'" class="space-y-8">
+            <div>
+              <h1 class="text-display-small text-on-surface mb-4">Colors</h1>
+              <p class="text-body-large text-on-surface-variant max-w-2xl">
+                Professional color palette with OKLCH color space, featuring elegant dark teal and blue-gray tones.
+              </p>
+            </div>
+            <div class="bg-surface rounded-lg p-6 border border-outline-variant">
+              <p class="text-body-medium text-on-surface-variant">
+                Color palette documentation coming soon...
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
   </div>
 </template>
