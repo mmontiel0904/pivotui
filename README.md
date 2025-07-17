@@ -10,12 +10,25 @@ npm install pivotui
 
 ```vue
 <script setup>
-import { Button } from 'pivotui'
+import { Button, Table } from 'pivotui'
 import 'pivotui/dist/style.css'
+
+const columns = [
+  { key: 'account', title: 'Account', sortable: true },
+  { key: 'balance', title: 'Balance', align: 'right', numeric: true }
+]
+
+const data = [
+  { account: 'Cash', balance: 25000 },
+  { account: 'Accounts Receivable', balance: 125000 }
+]
 </script>
 
 <template>
-  <Button variant="primary">Save Record</Button>
+  <div>
+    <Table :columns="columns" :data="data" density="compact" />
+    <Button variant="primary">Save Record</Button>
+  </div>
 </template>
 ```
 
@@ -48,6 +61,37 @@ import 'pivotui/dist/style.css'
 <Button :disabled="true">Disabled</Button>
 ```
 
+### Table
+```vue
+<script setup>
+import { Table } from 'pivotui'
+
+const columns = [
+  { key: 'id', title: 'ID', sortable: true, numeric: true },
+  { key: 'name', title: 'Customer', sortable: true },
+  { key: 'amount', title: 'Amount', align: 'right', numeric: true,
+    format: (value) => `$${value.toLocaleString()}` }
+]
+
+const data = [
+  { id: 1, name: 'Acme Corp', amount: 125000 },
+  { id: 2, name: 'Tech Solutions', amount: 87500 }
+]
+</script>
+
+<template>
+  <!-- Density modes for ERP data -->
+  <Table 
+    :columns="columns" 
+    :data="data" 
+    density="compact"
+    striped 
+    hoverable 
+    sortable 
+  />
+</template>
+```
+
 ### Typography System
 Built-in Material Design 3 typography with self-hosted fonts:
 
@@ -69,7 +113,7 @@ Built-in Material Design 3 typography with self-hosted fonts:
 - **JetBrains Mono** - Data and numbers
 
 ### Coming Soon
-🚧 Data Tables • Form Controls • Navigation • Status Indicators
+🚧 Form Controls • Navigation • Status Indicators • Pagination
 
 ## Design System
 

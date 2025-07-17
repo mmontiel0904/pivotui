@@ -110,8 +110,53 @@ interface ButtonProps {
 - Typography scale integration (`text-label-small/medium/large`)
 - Professional focus states with design token consistency
 
+### Table Component (`lib/components/Table.vue`)
+**Features:**
+- **3 density modes**: compact, comfortable, spacious for ERP data display
+- **Column configuration**: Sortable columns with custom formatting
+- **Visual enhancements**: Striped rows, hover effects, professional styling
+- **TypeScript**: Fully typed with TableProps and TableColumn interfaces
+- **Material Design 3**: Semantic color tokens and typography integration
+- **Accessibility**: ARIA labels and keyboard navigation support
+
+**Design Decisions:**
+- **Density control**: Critical for ERP applications with varying data volumes
+- **Professional styling**: Subtle borders and muted colors for business contexts
+- **Flexible formatting**: Custom column formatters for currency, dates, etc.
+- **Row identification**: Configurable row keys for unique identification
+
+**Props Interfaces:**
+```typescript
+interface TableColumn {
+  key: string
+  title: string
+  sortable?: boolean
+  align?: 'left' | 'center' | 'right'
+  numeric?: boolean
+  format?: (value: any) => string
+}
+
+interface TableProps {
+  columns: TableColumn[]
+  data: any[]
+  density?: 'compact' | 'comfortable' | 'spacious'
+  striped?: boolean
+  hoverable?: boolean
+  sortable?: boolean
+  rowKey?: string
+}
+```
+
+**Key Features:**
+- **Responsive design**: Adapts to different screen sizes
+- **Custom formatting**: Built-in formatters for currency, percentages, dates
+- **Sort indicators**: Visual feedback for column sorting states
+- **Professional appearance**: Optimized for financial and business data
+
 ### Demo Components
 - **ButtonExamples.vue**: Interactive showcase with all variants, sizes, states
+- **TableExamples.vue**: Comprehensive table demo with density controls and sample data
+- **TableSection.vue**: Complete table documentation with usage examples
 - **App.vue**: Main demo site with navigation and component sections
 
 ## CI/CD & Deployment
@@ -221,7 +266,7 @@ yarn build:docs         # Build demo site for GitHub Pages
 ```
 
 ### Component Priorities
-1. **Data Tables**: Sortable, filterable, paginated tables with density controls
+1. ✅ **Data Tables**: Sortable, filterable, paginated tables with density controls
 2. **Form Controls**: Text fields, selects, date pickers with validation
 3. **Navigation**: Module navigation rail and tabbed interfaces
 4. **Status Indicators**: Chips, badges, and progress indicators
@@ -363,13 +408,14 @@ Create showcase components following `ButtonExamples.vue` pattern:
 - **Use rounded corners**: `rounded-lg` (8px) for consistency
 
 ## Next Steps for Development
-1. **Create data table component** with ERP features
+1. ✅ **Create data table component** with ERP features - COMPLETED
 2. **Add form control components** (Input, Select, DatePicker)
 3. **Develop navigation components** (Rail, Tabs, Breadcrumbs)
 4. **Create typography showcase section** with all font scales
 5. **Build colors documentation section** with palette display
 6. **Set up component testing** with Vitest
 7. **Configure automated releases** with semantic versioning
+8. **Enhance table component** with pagination, filtering, and bulk actions
 
 ## Important Notes
 - **Public repository**: All workflows are secure for public use
