@@ -75,6 +75,19 @@
               Button
             </button>
           </li>
+          <li>
+            <button
+              @click="$emit('navigate', 'table')"
+              :class="[
+                'w-full text-left px-3 py-2 rounded-md text-label-large transition-colors',
+                activeSection === 'table' 
+                  ? 'bg-primary-container text-on-primary-container' 
+                  : 'text-on-surface hover:bg-surface-variant'
+              ]"
+            >
+              Table
+            </button>
+          </li>
           <!-- Future components -->
           <li>
             <button
@@ -90,14 +103,6 @@
               class="w-full text-left px-3 py-2 rounded-md text-label-large text-on-surface-variant opacity-50 cursor-not-allowed"
             >
               Card (Coming Soon)
-            </button>
-          </li>
-          <li>
-            <button
-              disabled
-              class="w-full text-left px-3 py-2 rounded-md text-label-large text-on-surface-variant opacity-50 cursor-not-allowed"
-            >
-              Data Table (Coming Soon)
             </button>
           </li>
         </ul>

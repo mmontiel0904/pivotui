@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import DemoNavigation from './components/DemoNavigation.vue'
 import OverviewSection from './components/sections/OverviewSection.vue'
 import InstallationSection from './components/sections/InstallationSection.vue'
+import TableSection from './components/sections/TableSection.vue'
 import ButtonExamples from './components/ButtonExamples.vue'
 
 // Navigation state
@@ -18,6 +19,7 @@ const sectionTitles: Record<string, string> = {
   installation: 'Installation',
   'design-tokens': 'Design Tokens',
   button: 'Button',
+  table: 'Table',
   typography: 'Typography',
   colors: 'Colors'
 }
@@ -101,6 +103,9 @@ const sectionTitles: Record<string, string> = {
               <ButtonExamples />
             </div>
           </div>
+
+          <!-- Table Section -->
+          <TableSection v-if="activeSection === 'table'" />
           
           <!-- Typography Section -->
           <div v-if="activeSection === 'typography'" class="space-y-8">
