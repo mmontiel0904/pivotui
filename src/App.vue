@@ -4,6 +4,8 @@ import DemoNavigation from './components/DemoNavigation.vue'
 import OverviewSection from './components/sections/OverviewSection.vue'
 import InstallationSection from './components/sections/InstallationSection.vue'
 import TableSection from './components/sections/TableSection.vue'
+import InputSection from './components/sections/InputSection.vue'
+import CardSection from './components/sections/CardSection.vue'
 import ButtonExamples from './components/ButtonExamples.vue'
 
 // Navigation state
@@ -20,6 +22,8 @@ const sectionTitles: Record<string, string> = {
   'design-tokens': 'Design Tokens',
   button: 'Button',
   table: 'Table',
+  input: 'Input',
+  card: 'Card',
   typography: 'Typography',
   colors: 'Colors'
 }
@@ -106,6 +110,12 @@ const sectionTitles: Record<string, string> = {
 
           <!-- Table Section -->
           <TableSection v-if="activeSection === 'table'" />
+          
+          <!-- Input Section -->
+          <InputSection v-if="activeSection === 'input'" />
+          
+          <!-- Card Section -->
+          <CardSection v-if="activeSection === 'card'" />
           
           <!-- Typography Section -->
           <div v-if="activeSection === 'typography'" class="space-y-8">

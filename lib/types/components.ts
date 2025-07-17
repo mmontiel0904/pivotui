@@ -24,3 +24,27 @@ export interface TableProps {
   sortable?: boolean
   rowKey?: string
 }
+
+export interface InputProps {
+  variant?: 'filled' | 'outlined' | 'underlined'
+  size?: 'sm' | 'md' | 'lg'
+  disabled?: boolean
+  required?: boolean
+  error?: boolean
+  helperText?: string
+  placeholder?: string
+  type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url'
+  modelValue?: string | number
+  density?: 'compact' | 'comfortable' | 'spacious'
+  prefix?: string
+  suffix?: string
+  currency?: boolean
+}
+
+export interface CardProps {
+  variant?: 'elevated' | 'outlined' | 'filled'
+  padding?: 'none' | 'sm' | 'md' | 'lg'
+  hoverable?: boolean
+  clickable?: boolean
+  density?: 'compact' | 'comfortable' | 'spacious'
+}

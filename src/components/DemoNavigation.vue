@@ -88,21 +88,30 @@
               Table
             </button>
           </li>
-          <!-- Future components -->
           <li>
             <button
-              disabled
-              class="w-full text-left px-3 py-2 rounded-md text-label-large text-on-surface-variant opacity-50 cursor-not-allowed"
+              @click="$emit('navigate', 'input')"
+              :class="[
+                'w-full text-left px-3 py-2 rounded-md text-label-large transition-colors',
+                activeSection === 'input' 
+                  ? 'bg-primary-container text-on-primary-container' 
+                  : 'text-on-surface hover:bg-surface-variant'
+              ]"
             >
-              Input (Coming Soon)
+              Input
             </button>
           </li>
           <li>
             <button
-              disabled
-              class="w-full text-left px-3 py-2 rounded-md text-label-large text-on-surface-variant opacity-50 cursor-not-allowed"
+              @click="$emit('navigate', 'card')"
+              :class="[
+                'w-full text-left px-3 py-2 rounded-md text-label-large transition-colors',
+                activeSection === 'card' 
+                  ? 'bg-primary-container text-on-primary-container' 
+                  : 'text-on-surface hover:bg-surface-variant'
+              ]"
             >
-              Card (Coming Soon)
+              Card
             </button>
           </li>
         </ul>
