@@ -38,7 +38,7 @@ const buttonClasses = computed(() => {
     secondary: 'bg-secondary-container text-on-secondary-container hover:bg-neutral-200 focus-visible:ring-secondary',
     outline: 'border border-outline bg-transparent text-on-surface hover:bg-surface-variant focus-visible:ring-primary',
     ghost: 'text-on-surface hover:bg-surface-variant focus-visible:ring-primary',
-    danger: 'bg-error text-on-error hover:bg-error-container focus-visible:ring-error'
+    danger: 'bg-error text-on-error hover:bg-red-700 focus-visible:ring-2 focus-visible:ring-error focus-visible:ring-offset-2'
   }
 
   const sizeClasses = {
