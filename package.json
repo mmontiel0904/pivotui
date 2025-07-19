@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A Vue 3 component library with Tailwind CSS",
   "type": "module",
+  "packageManager": "yarn@4.9.2",
   "main": "./dist/pivotui.umd.cjs",
   "module": "./dist/pivotui.js",
   "types": "./dist/index.d.ts",
