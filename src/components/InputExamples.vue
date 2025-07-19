@@ -333,7 +333,7 @@ const accountCode = ref('')
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { reactive } from 'vue'
 import Input from '../../lib/components/Input.vue'
 
 const sampleValues = reactive({
